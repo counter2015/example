@@ -1,6 +1,8 @@
 # Example
 
-***This project is a example for some "hello world" project which include*** 
+***This project is a example for some "hello world" project which include***
+
+ 
 -[x] scala-logging
 -[ ] kafka
 
