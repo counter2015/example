@@ -3,7 +3,8 @@
 ***This project is a example for some "hello world" project which include***
 
 - [x] scala-logging
-- [ ] kafka
+- [x] kafka
+- [ ] kafka-streaming-redis
 
 ## Common Requirements
 - jdk 1.8+
