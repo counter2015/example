@@ -27,6 +27,8 @@ lazy val logging = (project in file("scala-logging"))
 lazy val kafka = (project in file("kafka"))
   .settings(
     name := "KafkaExample",
+    assemblySettings,
+    assemblyJarName in assembly := "kafka-example.jar",
     libraryDependencies ++= Seq(
         kafkaClient
     )
