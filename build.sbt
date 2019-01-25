@@ -9,7 +9,7 @@ lazy val global = (project in file("."))
   )
   .aggregate(
     logging,
-    kafka,
+    kafka
   )
 
 lazy val logging = (project in file("scala-logging"))
@@ -28,7 +28,7 @@ lazy val kafka = (project in file("kafka"))
   .settings(
     name := "KafkaExample",
     libraryDependencies ++= Seq(
-        //scalaLogging
+        kafkaClient
     )
   )
 
@@ -40,5 +40,5 @@ lazy val assemblySettings = Seq(
   case x =>
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
-  },
+  }
 )
