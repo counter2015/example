@@ -13,7 +13,7 @@ import ConfigInstance.config
 
 import scala.collection.JavaConverters._
 
-object Main {
+object ClusterStreaming {
   // this checkpoint Path is set for debug, for real use, please replace it as valid directory.
   val checkpointPath: String = "file:///root/data/checkpoint/test" + new Date().getTime.toString
 
