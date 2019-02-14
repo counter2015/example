@@ -39,7 +39,6 @@ lazy val kafka_streaming_redis = (project in file("kafka-streaming-redis"))
     name := "KafkaSparkStreamingRedisExample",
     assemblySettings,
     assemblyJarName in assembly := "kafka-spark-redis-example.jar",
-    mainClass in assembly := Some("com.github.counter2015.Main"),
     libraryDependencies ++= Seq(
       spark,
       sparkStreamingKafka,
