@@ -1,8 +1,8 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.11.12"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.github.counter2015"
+ThisBuild / scalaVersion := "2.11.12"
+ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / organization := "com.github.counter2015"
 
 lazy val global = (project in file("."))
   .settings(
@@ -30,17 +30,32 @@ lazy val kafka = (project in file("kafka"))
     assemblySettings,
     assemblyJarName in assembly := "kafka-example.jar",
     libraryDependencies ++= Seq(
-        kafkaClient
+      kafkaClient
+    )
+  )
+
+lazy val kafka_streaming_redis = (project in file("kafka-streaming-redis"))
+  .settings(
+    name := "KafkaSparkStreamingRedisExample",
+    assemblySettings,
+    assemblyJarName in assembly := "kafka-spark-redis-example.jar",
+    mainClass in assembly := Some("com.github.counter2015.Main"),
+    libraryDependencies ++= Seq(
+      spark,
+      sparkStreamingKafka,
+      scalaLogging,
+      typesafeConfig,
+      jedis
     )
   )
 
 lazy val assemblySettings = Seq(
   assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs@_*) => MergeStrategy.discard
-  case PathList("org", "apache", "spark", xs@_*) => MergeStrategy.first
-  case "application.conf" => MergeStrategy.concat
-  case x =>
-    val oldStrategy = (assemblyMergeStrategy in assembly).value
-    oldStrategy(x)
+    case PathList("META-INF", xs@_*) => MergeStrategy.discard
+    case PathList("org", "apache", "spark", xs@_*) => MergeStrategy.first
+    case "application.conf" => MergeStrategy.concat
+    case x =>
+      val oldStrategy = (assemblyMergeStrategy in assembly).value
+      oldStrategy(x)
   }
 )
