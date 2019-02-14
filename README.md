@@ -4,7 +4,7 @@
 
 - [x] scala-logging
 - [x] kafka
-- [ ] kafka-streaming-redis
+- [x] kafka-streaming-redis
 
 ## Common Requirements
 - jdk 1.8+

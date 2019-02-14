@@ -1,8 +1,4 @@
 # Kafka SparkStreaming Redis example
-Kafka: https://kafka.apache.org
-
-This example depends on version 2.0.1.
-
 The project struct like this
 ```shell
 [root@mycentos kafka-streaming-redis]# tree
