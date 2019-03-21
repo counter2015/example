@@ -23,6 +23,6 @@ object PutAndGet {
     val theget = new Get(Bytes.toBytes("rowkey1"))
     val result = table.get(theget)
     val value = result.value()
-    print(Bytes.toString(value))
+    println(Bytes.toString(value))
   }
 }
