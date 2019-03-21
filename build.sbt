@@ -9,7 +9,8 @@ lazy val global = (project in file("."))
   )
   .aggregate(
     logging,
-    kafka
+    kafka,
+    kafka_streaming_redis
   )
 
 lazy val logging = (project in file("scala-logging"))
@@ -45,6 +46,18 @@ lazy val kafka_streaming_redis = (project in file("kafka-streaming-redis"))
       scalaLogging,
       typesafeConfig,
       jedis
+    )
+  )
+
+lazy val hbase = (project in file("hbase"))
+  .settings(
+    name := "HbaseSimpleExample",
+    assemblySettings,
+    assemblyJarName in assembly := "hbase-example.jar",
+    libraryDependencies ++= Seq(
+      hadoopCommon,
+      hbaseCommon,
+      hbaseClient
     )
   )
 

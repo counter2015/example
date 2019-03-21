@@ -9,6 +9,8 @@ object Dependencies {
   val sparkVersion                      =             "2.4.0"
   val typesafeConfigVersion             =             "1.3.2"
   val jedisVersion                      =             "3.0.0"
+  val hbaseVersion                      =             "2.1.3"
+  val hadoopVersion                     =             "2.7.1"
 
   // Libraries
   val logback             = "ch.qos.logback"             %  "logback-classic"       % logbackVersion
@@ -18,4 +20,7 @@ object Dependencies {
   val spark               = "org.apache.spark"           %% "spark-streaming"       % sparkVersion                % "provided"
   val typesafeConfig      = "com.typesafe"               %  "config"                % typesafeConfigVersion
   val jedis               = "redis.clients"              %  "jedis"                 % jedisVersion
+  val hadoopCommon        = "org.apache.hadoop"          %  "hadoop-common"         % hadoopVersion
+  val hbaseCommon         = "org.apache.hbase"           %  "hbase-common"          % hbaseVersion
+  val hbaseClient         = "org.apache.hbase"           %  "hbase-client"          % hbaseVersion
 }
