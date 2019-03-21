@@ -51,9 +51,7 @@ lazy val kafka_streaming_redis = (project in file("kafka-streaming-redis"))
 
 lazy val hbase = (project in file("hbase"))
   .settings(
-    name := "HbaseSimpleExample",
-    assemblySettings,
-    assemblyJarName in assembly := "hbase-example.jar",
+    name := "HBaseExample",
     libraryDependencies ++= Seq(
       hadoopCommon,
       hbaseCommon,
