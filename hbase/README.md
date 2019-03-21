@@ -40,7 +40,8 @@ sbt:HbaseExample> run
 log4j:WARN No appenders could be found for logger (org.apache.hadoop.util.Shell).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-value_1[success] Total time: 2 s, completed Mar 21, 2019 12:06:49 PM
+value_1
+[success] Total time: 6 s, completed Mar 21, 2019 12:23:02 PM
 ```
 
 you can find it by HBase shell
