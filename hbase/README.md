@@ -21,9 +21,13 @@ The project struct like this
 - Zookeeper
 - HBase 2.1.3
  
-you should firstly run HBase, in this example, I hava started HBase at 192.168.22.129
-then in hbase shell 
+you should firstly run HBase, in this example, I have started HBase at 192.168.22.129
+then in HBase shell 
 ```shell
+# if not start HBase
+$ start-hbase.sh
+
+$ hbase shell
 # create a namespace `test`
 hbase> create_namespace 'test'
 
