@@ -14,7 +14,12 @@ import ConfigInstance.config
 import scala.collection.JavaConverters._
 
 object ClusterStreaming {
-  // this checkpoint Path is set for debug, for real use, please replace it as valid directory.
+  /**
+    * this checkpoint Path is set for debug,
+    * for real use,
+    * please replace it as valid directory.
+     */
+
   val checkpointPath: String = "file:///root/data/checkpoint/test" + new Date().getTime.toString
 
   def initSparkStreamingContext(): StreamingContext = {
@@ -38,11 +43,12 @@ object ClusterStreaming {
       ssc, kafkaParams, topicSet
     )
 
-    //     flatMap is a one-to-many DStream operation that creates a new DStream
-    // by generating multiple new records from each record in the source DStream.
-
-    //    while flatMap will let Map[String, String] to Map[String, char], so we
-    //add a OPTION Some to let String be String.
+    /**
+      *   flatMap is a one-to-many DStream operation that creates a new DStream
+      * by generating multiple new records from each record in the source DStream.
+      *   while flatMap will convert Map[String, String] to Map[String, char], so we
+      * add a OPTION Some to retain String struct.
+      */
 
     val events = kafkaStream.flatMap(line => Some(line._2))
 
