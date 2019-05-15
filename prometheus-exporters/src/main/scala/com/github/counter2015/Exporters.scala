@@ -1,7 +1,9 @@
-import java.io.IOException
-import io.prometheus.client.{Counter, Gauge, Histogram, Summary}
-import io.prometheus.client.exporter.HTTPServer
+package com.github.counter2015
 
+import java.io.IOException
+
+import io.prometheus.client.exporter.HTTPServer
+import io.prometheus.client.{Counter, Gauge, Histogram, Summary}
 
 object Exporters {
   private def something(minValue: Int, maxValue: Int): Int = {

@@ -54,8 +54,6 @@ lazy val kafka_streaming_redis = (project in file("kafka-streaming-redis"))
 lazy val hbase = (project in file("hbase"))
   .settings(
     name := "HBaseExample",
-    assemblySettings,
-    assemblyJarName in assembly := "my-prometheus-exporters.jar",
     libraryDependencies ++= Seq(
       hadoopCommon,
       hbaseCommon,
@@ -66,6 +64,8 @@ lazy val hbase = (project in file("hbase"))
 lazy val prometheusExporters = (project in file("prometheus-exporters"))
   .settings(
     name := "CustomPrometheusExporters",
+    assemblySettings,
+    assemblyJarName in assembly := "my-prometheus-exporters.jar",
     libraryDependencies ++= Seq(
       prometheusClient,
       prometheusHttpServer,
