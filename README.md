@@ -6,6 +6,7 @@
 - [x] kafka
 - [x] kafka-streaming-redis
 - [x] hbase
+- [x] prometheus-exporter
 
 ## Common Requirements
 - jdk 1.8+
