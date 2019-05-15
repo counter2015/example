@@ -10,7 +10,9 @@ lazy val global = (project in file("."))
   .aggregate(
     logging,
     kafka,
-    kafka_streaming_redis
+    kafka_streaming_redis,
+    hbase,
+    prometheusExporters
   )
 
 lazy val logging = (project in file("scala-logging"))
@@ -56,6 +58,16 @@ lazy val hbase = (project in file("hbase"))
       hadoopCommon,
       hbaseCommon,
       hbaseClient
+    )
+  )
+
+lazy val prometheusExporters = (project in file("PrometheusExporters"))
+  .settings(
+    name := "CustomPrometheusExporters",
+    libraryDependencies ++= Seq(
+      prometheusClient,
+      prometheusHttpServer,
+      prometheusServlet
     )
   )
 
