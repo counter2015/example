@@ -12,7 +12,8 @@ lazy val global = (project in file("."))
     kafka,
     kafka_streaming_redis,
     hbase,
-    prometheusExporters
+    prometheusExporters,
+    hdfs
   )
 
 lazy val logging = (project in file("scala-logging"))
@@ -69,7 +70,20 @@ lazy val prometheusExporters = (project in file("prometheus-exporters"))
     libraryDependencies ++= Seq(
       prometheusClient,
       prometheusHttpServer,
-      prometheusServlet
+      prometheusServlet,
+      typesafeConfig
+    )
+  )
+
+lazy val hdfs = (project in file("hdfs"))
+  .settings(
+    name := "SimpleHDFSClient",
+    assemblySettingsHDFS,
+    assemblyJarName in assembly := "simple-hdfs-client.jar",
+    libraryDependencies ++= Seq(
+      hadoopCommon,
+      hadoopHDFS,
+      typesafeConfig
     )
   )
 
@@ -81,5 +95,13 @@ lazy val assemblySettings = Seq(
     case x =>
       val oldStrategy = (assemblyMergeStrategy in assembly).value
       oldStrategy(x)
+  }
+)
+
+lazy val assemblySettingsHDFS = Seq(
+  assemblyMergeStrategy in assembly := {
+    case PathList("META-INF", xs@_*) => MergeStrategy.discard
+    case "application.conf" => MergeStrategy.concat
+    case x => MergeStrategy.first
   }
 )

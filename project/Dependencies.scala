@@ -22,6 +22,7 @@ object Dependencies {
   val typesafeConfig       = "com.typesafe"               %  "config"                  % typesafeConfigVersion
   val jedis                = "redis.clients"              %  "jedis"                   % jedisVersion
   val hadoopCommon         = "org.apache.hadoop"          %  "hadoop-common"           % hadoopVersion
+  val hadoopHDFS = "org.apache.hadoop" % "hadoop-hdfs" % hadoopVersion
   val hbaseCommon          = "org.apache.hbase"           %  "hbase-common"            % hbaseVersion
   val hbaseClient          = "org.apache.hbase"           %  "hbase-client"            % hbaseVersion
   val prometheusClient     = "io.prometheus"              %  "simpleclient"            % prometheusVersion
