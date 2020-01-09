@@ -9,6 +9,7 @@ import org.apache.hadoop.io.IOUtils
 
 import scala.util.{Failure, Success, Try}
 
+// scalastyle:off magic.number
 object SimpleHDFSClient {
 
   /* helper function for hadoop config */
@@ -164,9 +165,11 @@ object SimpleHDFSClient {
     val fs = FileSystem.get(URI.create(sourcePath), conf)
     val sp = new Path(sourcePath)
     val tp = new Path(targetPath)
-    if (!fs.exists(sp)) println(s"Error: the source file cant find: $sourcePath")
-    else if (fs.exists(tp)) println(s"Error: The target file exist already: $targetPath")
-    else {
+    if (!fs.exists(sp)) {
+      println(s"Error: the source file cant find: $sourcePath")
+    } else if (fs.exists(tp)) {
+      println(s"Error: The target file exist already: $targetPath")
+    } else {
       fs.rename(sp, tp)
     }
     fs.close()

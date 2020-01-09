@@ -5,6 +5,7 @@ import java.io.IOException
 import io.prometheus.client.exporter.HTTPServer
 import io.prometheus.client.{Counter, Gauge, Histogram, Summary}
 
+// scalastyle:off magic.number
 object Exporters {
   private def something(minValue: Int, maxValue: Int): Int = {
     val res = minValue + (Math.random() * (maxValue - minValue))
