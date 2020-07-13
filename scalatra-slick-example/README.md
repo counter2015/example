@@ -1,4 +1,4 @@
-# Scaltra example
+# Scalatra example
 
 - Scalatra: https://scalatra.org/
 - Slick: https://scala-slick.org/
