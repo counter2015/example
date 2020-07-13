@@ -1,0 +1,23 @@
+@import io.github.counter2015._
+@(areas: Seq[Area])
+@areaUrl(uri: Int) = @{
+    s"/areas/$uri"
+}
+@layouts.html.default("Scalatra: a tiny, Sinatra-like web framework for Scala", "Welcome to Scalatra") {
+    <p>Hello, Twirl! </p>
+    <div class = "row">
+        <div class="col-md-8">
+        @for(area <- areas) {
+            <div class="panel panel-default">
+                <div class = "panel-heading">
+                        Area: @area.name
+                    <a pull-right href="@areaUrl(area.id)"> </a>
+                    </div>
+            </div>
+            <div class = "panel-body">
+            @area.description
+            </div>
+        }
+        </div>
+    </div>
+}

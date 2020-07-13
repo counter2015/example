@@ -4,6 +4,13 @@ ThisBuild / scalaVersion := "2.11.12"
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.github.counter2015"
 
+ThisBuild / scalacOptions ++= Seq(
+  "-deprecation", // Emit warning and location for usages of deprecated APIs.
+  "-encoding", "utf-8", // Specify character encoding used by source files.
+  "-explaintypes", // Explain type errors in more detail.
+  "-feature" // Emit warning and location for usages of features that should be imported explicitly.
+)
+
 lazy val global = (project in file("."))
   .settings(
   )
@@ -86,6 +93,27 @@ lazy val hdfs = (project in file("hdfs"))
       typesafeConfig
     )
   )
+
+lazy val scalatraDemo = (project in file("scalatra-slick-example"))
+  .enablePlugins(SbtTwirl, ScalatraPlugin)
+  .settings(
+    name := "ScalatraWithSlick",
+    scalaVersion := "2.13.1",
+    resolvers += Classpaths.typesafeReleases,
+    mainClass in assembly := Some("ScalatraLauncher"),
+    libraryDependencies ++= Seq(
+      scalatra,
+      scalatraTest,
+      logback,
+      jetty,
+      javaxServlet,
+      slick,
+      h2,
+      typesafeConfig
+    ),
+    assemblyJarName in assembly := "scalatra-demo.jar",
+  )
+
 
 lazy val assemblySettings = Seq(
   assemblyMergeStrategy in assembly := {

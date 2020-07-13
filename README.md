@@ -8,6 +8,7 @@
 - [x] hbase
 - [x] prometheus-exporter
 - [x] hdfs
+- [x] scalatra-with-slick
 
 ## Common Requirements
 - jdk 1.8+
