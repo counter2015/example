@@ -9,7 +9,7 @@ object Dependencies {
   val sparkVersion = "2.4.0"
   val typesafeConfigVersion = "1.3.4"
   val jedisVersion = "3.0.0"
-  val hbaseVersion = "2.1.3"
+  val hbaseVersion = "2.1.10"
   val hadoopVersion = "2.7.1"
   val prometheusVersion = "0.6.0"
   val scalatraVersion = "2.7.0"
