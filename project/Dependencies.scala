@@ -10,7 +10,7 @@ object Dependencies {
   val typesafeConfigVersion = "1.3.4"
   val jedisVersion = "3.0.0"
   val hbaseVersion = "2.1.3"
-  val hadoopVersion = "2.7.1"
+  val hadoopVersion = "2.7.7"
   val prometheusVersion = "0.6.0"
   val scalatraVersion = "2.7.0"
   val jettyVersion = "9.4.28.v20200408"
