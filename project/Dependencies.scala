@@ -11,7 +11,7 @@ object Dependencies {
   val jedisVersion = "3.0.0"
   val hbaseVersion = "2.1.3"
   val hadoopVersion = "2.7.1"
-  val prometheusVersion = "0.6.0"
+  val prometheusVersion = "0.16.0"
   val scalatraVersion = "2.7.0"
   val jettyVersion = "9.4.28.v20200408"
   val javaxServletVerson = "3.1.0"
