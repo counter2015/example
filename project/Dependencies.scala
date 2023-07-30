@@ -4,7 +4,7 @@ object Dependencies {
   // Versions
   val logbackVersion = "1.2.3"
   val scalaLoggingVersion = "3.9.0"
-  val kafkaVersion = "2.0.1"
+  val kafkaVersion = "2.8.2"
   val sparkStreamingKafkaVersion = "1.6.3"
   val sparkVersion = "2.4.0"
   val typesafeConfigVersion = "1.3.4"
