@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
   // Versions
   val logbackVersion = "1.2.3"
-  val scalaLoggingVersion = "3.9.0"
+  val scalaLoggingVersion = "3.9.5"
   val kafkaVersion = "2.0.1"
   val sparkStreamingKafkaVersion = "1.6.3"
   val sparkVersion = "2.4.0"
